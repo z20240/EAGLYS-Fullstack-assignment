@@ -39,18 +39,26 @@ function SqlInput() {
       >
         Submit
       </button>
-      <div className="flex m-5">
-        <div className="flex-1 p-2 border border-gray-300 rounded-lg">
-          <h3 className="mb-2">Modified SQL:</h3>
-          <pre className="bg-gray-100 p-2 rounded">{response?.modifiedSQL}</pre>
+      {response.error ? (
+        <div className="mt-4 p-2 border border-red-500 rounded bg-red-100 text-red-700">
+          {response.error}
         </div>
-        <div className="flex-1 p-2 border border-gray-300 rounded-lg ml-2.5">
-          <h3 className="mb-2">Map:</h3>
-          <pre className="bg-gray-100 p-2 rounded">
-            {JSON.stringify(response?.map, null, 2)}
-          </pre>
+      ) : (
+        <div className="flex m-5">
+          <div className="flex-1 p-2 border border-gray-300 rounded-lg">
+            <h3 className="mb-2">Modified SQL:</h3>
+            <pre className="bg-gray-100 p-2 rounded">
+              {response?.modifiedSQL}
+            </pre>
+          </div>
+          <div className="flex-1 p-2 border border-gray-300 rounded-lg ml-2.5">
+            <h3 className="mb-2">Map:</h3>
+            <pre className="bg-gray-100 p-2 rounded">
+              {JSON.stringify(response?.map, null, 2)}
+            </pre>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

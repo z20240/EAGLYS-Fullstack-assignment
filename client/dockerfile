@@ -1,0 +1,20 @@
+# Use an official node runtime as the parent image
+FROM node:16
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install client dependencies
+RUN npm install
+
+# Bundle client source
+COPY . .
+
+# Make port 3000 available outside the container
+EXPOSE 3000
+
+# Start the React app
+CMD ["npm", "start"]

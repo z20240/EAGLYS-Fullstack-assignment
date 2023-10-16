@@ -22,3 +22,7 @@ By using `yarn build` could build the project. It will be build into `dist` fold
 For client side, using react.js to complete a simple page for user input the SQL Query.
 
 The `build` and `run` are the same the way as `create-react-app`.
+
+### For dockerlize.
+
+Just using `docker-compose up -d` to start the service.

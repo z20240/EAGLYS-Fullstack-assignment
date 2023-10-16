@@ -39,7 +39,7 @@ function SqlInput() {
       >
         Submit
       </button>
-      {response.error ? (
+      {response?.error ? (
         <div className="mt-4 p-2 border border-red-500 rounded bg-red-100 text-red-700">
           {response.error}
         </div>
